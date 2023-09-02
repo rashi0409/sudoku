@@ -99,4 +99,32 @@ public class SudokuSolver {
     public int[][] getBoard() {
         return board;
     }
+ private static boolean isSudokuSolved() {
+        // Check if the Sudoku puzzle is solved (no empty cells).
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (board[i][j] == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+  private static void printBoard() {
+        System.out.println("Sudoku Board:");
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                System.out.print(board[i][j] + " ");
+                if (j == 2 || j == 5) {
+                    System.out.print("| ");
+                }
+            }
+            System.out.println();
+            if (i == 2 || i == 5) {
+                System.out.println("---------------------");
+            }
+        }
+        System.out.println();
+    }
+    
 }
